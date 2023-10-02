@@ -1,0 +1,88 @@
+{
+  "produits": [
+    {
+      "id": 1,
+      "nom": "orange",
+      "prix": 4000,
+      "checked": true
+    },
+    {
+      "id": 2,
+      "nom": "Banane",
+      "prix": 4000,
+      "checked": true
+    },
+    {
+      "id": 3,
+      "nom": "Pomme",
+      "prix": 4000,
+      "checked": true
+    },
+    {
+      "id": 4,
+      "nom": "Mangue",
+      "prix": 4000,
+      "checked": "true"
+    },
+    {
+      "id": 5,
+      "nom": "PC",
+      "prix": 150000,
+      "checked": "true"
+    },
+    {
+      "nom": "Mariama Ba",
+      "prix": "12000",
+      "checked": true,
+      "id": 9
+    },
+    {
+      "nom": "Pomme Vert",
+      "prix": "250",
+      "checked": true,
+      "id": 10
+    },
+    {
+      "nom": "Sac",
+      "prix": "10000",
+      "checked": true,
+      "id": 11
+    },
+    {
+      "nom": "Telephone",
+      "prix": "300000",
+      "checked": true,
+      "id": 12
+    },
+    {
+      "nom": "TAISHEN",
+      "prix": "6000",
+      "checked": false,
+      "id": 13
+    },
+    {
+      "nom": "TAISHEN",
+      "prix": "6000",
+      "checked": true,
+      "id": 14
+    },
+    {
+      "nom": "casamançais",
+      "prix": "400",
+      "checked": true,
+      "id": 15
+    },
+    {
+      "nom": "Séo",
+      "prix": "100",
+      "checked": false,
+      "id": 16
+    },
+    {
+      "nom": "Dell",
+      "prix": "15000",
+      "checked": false,
+      "id": 17
+    }
+  ]
+}

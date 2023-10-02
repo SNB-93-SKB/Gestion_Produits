@@ -1,0 +1,46 @@
+<div class="p-3">
+    <div class="card">
+    
+        <div class="card-body">
+          <div class="card-body">
+            {{kw}}
+            <input  class="p-1" type="text" [(ngModel)]="kw">
+            <button (click)="searchProduit()" class="btn btn-outline-info ms-1">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+            <table class="table">
+                   <thead>
+                    <tr>
+                     <th>Nom</th>    <th>Prix</th>    <th>Checked</th>    
+                    </tr>
+                   </thead>
+                <tbody>
+             <tr *ngFor="let produit of produits">
+        
+                <td>{{produit.nom}}</td>
+                <td>{{produit.prix}}</td>
+              <td>
+                <button (click)="handleCheckProduit (produit)"
+                class=" btn btn-outline-success">
+                    <i [class]="produit.checked?'bi bi-check':'bi bi-cercle'"></i>
+                </button>
+              </td>
+<td>
+    <button (click)="handleDelete (produit)" class="btn btn-outline-danger">
+        <i class="bi bi-trash"></i>
+    </button>
+</td>
+             </tr>
+                </tbody>
+
+            </table>
+            <ul class="nav nav-pills">
+              <li *ngFor="let page of [].constructor(this.totalPage); let i=index">
+               <button (click)="handelGoToPage(i+1)" class="btn-btn-outline-info m-1">
+                {{(i+1)}}
+               </button>
+              </li>
+            </ul>
+    </div>
+    </div>
