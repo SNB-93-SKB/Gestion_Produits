@@ -1,8 +1,9 @@
-import { HttpClient } from '@angular/common/http';
-import { Component,OnInit, numberAttribute } from '@angular/core';
+import { HttpClient} from '@angular/common/http';
+import { Component,OnInit, numberAttribute} from '@angular/core';
 import { Observable } from 'rxjs';
 import { ProduitService } from '../services/produit.service';
 import { Produit } from '../model/produit.model';
+import { Route, Router } from '@angular/router';
 
 
 @Component({
@@ -18,25 +19,26 @@ totalPage: number=0;
 pageSize: number=4;
 currentPage: number=1;
 
-  constructor(private produitService:ProduitService){
+  constructor(private produitService:ProduitService,
+    private router:Router){
 
 
   }
   ngOnInit() {
-  this.getProduits();
+  this.searchProduits();
     
     
   }
-  getProduits(){ 
+  searchProduits(){ 
   
-this.produitService.getProduits(this.currentPage, this.pageSize)
+this.produitService.searchProduits(this.kw ,this.currentPage, this.pageSize)
 .subscribe({
   next : (resp)=> {
     this.produits = resp.body as Produit[];
     let totalProduits:number=parseInt(resp.headers.get('x-total-count')!);
     this.totalPage = Math.floor(totalProduits / this.pageSize);
-    if(totalProduits % this.pageSize!= 0){
-      this.totalPage = this.totalPage+1
+    if(totalProduits % this.pageSize !=0){
+      this.totalPage = this.totalPage+1;
     }
   },
   error : err=>{
@@ -70,19 +72,13 @@ next:value=>{
 }
       })
 }
-searchProduit(){
-this.produitService.searchProduit(this.kw)
-.subscribe({
-  next :data => {
-    this.produits = data;
-
-  }
-})
-
-
-}
 handelGoToPage(page:number){
   this.currentPage=page;
-  this.getProduits();
+  this.searchProduits();
+  }
+  handleEdite(produit: Produit){
+  this.router.navigateByUrl(`/editProduit/produit.id`);
+   
+
   }
 }

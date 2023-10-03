@@ -11,10 +11,11 @@ export class ProduitService {
   constructor(private http: HttpClient) { }
 
 
-  public getProduits(page :number=1, size :number=4){
+  public searchProduits(kw:string="",page :number=1, size :number=4){
 
-    return this.http.get(`http://localhost:8080/produits?_
-     page=${page}&_limit=${size}`,{ observe:'response'});
+    return this.http.get(
+      `http://localhost:8080/produits?nom_like=${kw}&_page=${page}&_limit=${size}`
+      ,{ observe:'response'});
   }
   public checkProduit(produit:Produit):Observable<Produit>{
 
@@ -30,9 +31,8 @@ export class ProduitService {
 
     return  this.http.post<Produit>(`http://localhost:8080/produits`, produit);
   }
-  
-  public searchProduit(kw:string):Observable<Array<Produit>>{
-
-    return this.http.get<Array<Produit>>(`http://localhost:8080/produits?nom_like=${kw}`);
+  getProduitById(produitId:number):Observable<Produit>{
+return this.http.get<Produit>(`http://localhost:8080/produits/${produitId}`);
   }
+  
 }

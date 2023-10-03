@@ -75,14 +75,20 @@
     {
       "nom": "Séo",
       "prix": "100",
-      "checked": false,
+      "checked": true,
       "id": 16
     },
     {
       "nom": "Dell",
       "prix": "15000",
-      "checked": false,
+      "checked": true,
       "id": 17
+    },
+    {
+      "nom": "Chargeur Telephone",
+      "prix": "15000",
+      "checked": true,
+      "id": 18
     }
   ]
 }

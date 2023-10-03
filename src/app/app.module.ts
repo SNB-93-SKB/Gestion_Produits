@@ -9,20 +9,24 @@ import { ProduitsComponent } from './produits/produits.component';
 import { NouveauProduitComponent } from './nouveau-produit/nouveau-produit.component';
 import { ProduitService } from './services/produit.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditProduitComponent } from './edit-produit/edit-produit.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ProduitsComponent,
-    NouveauProduitComponent
+    NouveauProduitComponent,
+    EditProduitComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    RouterModule
     
   ],
   providers: [
