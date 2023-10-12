@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProduitService } from '../services/produit.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { min } from 'rxjs';
+import { Produit } from '../model/produit.model';
 
 @Component({
   selector: 'app-edit-produit',
@@ -23,7 +24,7 @@ produitFormGroup!: FormGroup
     
     this.produitId=this.activatedRoute.snapshot.params['id'];
     this.produitService.getProduitById(this.produitId).subscribe({
-next: (produit)=>{
+    next: (produit)=>{
   this.produitFormGroup=this.fb.group({
     id:this.fb.control(produit.id),
     nom:this.fb.control(produit.nom,Validators.required),
@@ -39,6 +40,12 @@ error: err=>{
   }
   updateProduit(){
 
+    let produit:Produit=this.produitFormGroup.value;
+this.produitService.updateProduit(produit).subscribe({
+  next:data=>{
+    alert(JSON.stringify(data))
+  }
+})
     
   }
 }

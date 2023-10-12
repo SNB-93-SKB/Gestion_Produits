@@ -11,7 +11,7 @@ export class ProduitService {
   constructor(private http: HttpClient) { }
 
 
-  public searchProduits(kw:string="",page :number=1, size :number=4){
+  public searchProduits(kw:string="",page :number, size :number){
 
     return this.http.get(
       `http://localhost:8080/produits?nom_like=${kw}&_page=${page}&_limit=${size}`
@@ -34,5 +34,7 @@ export class ProduitService {
   getProduitById(produitId:number):Observable<Produit>{
 return this.http.get<Produit>(`http://localhost:8080/produits/${produitId}`);
   }
-  
+  updateProduit(produit:Produit):Observable<Produit>{
+    return this.http.put<Produit>(`http://localhost:8080/produits/${produit.id}`,produit );
+  }
 }

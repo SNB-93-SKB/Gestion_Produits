@@ -1,34 +1,10 @@
 {
   "produits": [
     {
-      "id": 1,
-      "nom": "orange",
-      "prix": 4000,
-      "checked": true
-    },
-    {
-      "id": 2,
-      "nom": "Banane",
-      "prix": 4000,
-      "checked": true
-    },
-    {
-      "id": 3,
-      "nom": "Pomme",
-      "prix": 4000,
-      "checked": true
-    },
-    {
-      "id": 4,
-      "nom": "Mangue",
-      "prix": 4000,
-      "checked": "true"
-    },
-    {
       "id": 5,
-      "nom": "PC",
-      "prix": 150000,
-      "checked": "true"
+      "nom": "PC_model1",
+      "prix": "160000",
+      "cheched": true
     },
     {
       "nom": "Mariama Ba",

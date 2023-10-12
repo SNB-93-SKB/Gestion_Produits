@@ -77,7 +77,7 @@ handelGoToPage(page:number){
   this.searchProduits();
   }
   handleEdite(produit: Produit){
-  this.router.navigateByUrl(`/editProduit/produit.id`);
+  this.router.navigateByUrl(`/editProduit/${produit.id}`);
    
 
   }
