@@ -3,8 +3,8 @@
     
         <div class="card-body">
           <div class="card-body">
-            {{kw}}
-            <input  class="p-1" type="text" [(ngModel)]="kw">
+            {{appState.produitsState.kw}}
+            <input  class="p-1" type="text" [(ngModel)]="appState.produitsState.kw">
             <button (click)="searchProduits()" class="btn btn-outline-info ms-1">
               <i class="bi bi-search"></i>
             </button>
@@ -16,7 +16,7 @@
                     </tr>
                    </thead>
                 <tbody>
-             <tr *ngFor="let produit of produits">
+             <tr *ngFor="let produit of appState.produitsState.produits">
         
                 <td>{{produit.nom}}</td>
                 <td>{{produit.prix}}</td>
@@ -42,9 +42,9 @@
 
             </table>
             <ul class="nav nav-pills">
-              <li *ngFor="let page of [].constructor(this.totalPage);let i=index">
+              <li *ngFor="let page of [].constructor(this.appState.produitsState.totalPage);let i=index">
                <button (click)="handelGoToPage(i+1)"
-               [ngClass]="currentPage==(i+1)?'btn btn-info ms-1':'btn btn-outline-info ms-1'">
+               [ngClass]="this.appState.produitsState.currentPage==(i+1)?'btn btn-info ms-1':'btn btn-outline-info ms-1'">
                 {{(i+1)}}
                </button>
               </li>

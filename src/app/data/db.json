@@ -4,19 +4,14 @@
       "id": 5,
       "nom": "PC_model1",
       "prix": "160000",
-      "cheched": true
+      "cheched": true,
+      "checked": true
     },
     {
       "nom": "Mariama Ba",
       "prix": "12000",
       "checked": true,
       "id": 9
-    },
-    {
-      "nom": "Pomme Vert",
-      "prix": "250",
-      "checked": true,
-      "id": 10
     },
     {
       "nom": "Sac",

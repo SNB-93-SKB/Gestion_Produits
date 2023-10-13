@@ -11,6 +11,9 @@ import { ProduitService } from './services/produit.service';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditProduitComponent } from './edit-produit/edit-produit.component';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from './login/login.component';
+import { AdminTemplateComponent } from './admin-template/admin-template.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { RouterModule } from '@angular/router';
     HomeComponent,
     ProduitsComponent,
     NouveauProduitComponent,
-    EditProduitComponent
+    EditProduitComponent,
+    LoginComponent,
+    AdminTemplateComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

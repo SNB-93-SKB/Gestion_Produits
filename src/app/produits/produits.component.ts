@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { ProduitService } from '../services/produit.service';
 import { Produit } from '../model/produit.model';
 import { Route, Router } from '@angular/router';
+import { AppStateService } from '../services/app-state.service';
 
 
 @Component({
@@ -13,14 +14,8 @@ import { Route, Router } from '@angular/router';
 })
 export class ProduitsComponent implements OnInit{
 
- public produits : Array<Produit>=[];
-public kw:string="";
-totalPage: number=0;
-pageSize: number=4;
-currentPage: number=1;
-
   constructor(private produitService:ProduitService,
-    private router:Router){
+    private router:Router, public appState:AppStateService){
 
 
   }
@@ -31,14 +26,19 @@ currentPage: number=1;
   }
   searchProduits(){ 
   
-this.produitService.searchProduits(this.kw ,this.currentPage, this.pageSize)
+this.produitService.searchProduits(
+  this.appState.produitsState.kw,
+  //this.appState.produitsState.kw ,
+  this.appState.produitsState.currentPage, 
+  this.appState.produitsState.pageSize)
 .subscribe({
   next : (resp)=> {
-    this.produits = resp.body as Produit[];
+    this.appState.produitsState.produits = resp.body as Produit[];
     let totalProduits:number=parseInt(resp.headers.get('x-total-count')!);
-    this.totalPage = Math.floor(totalProduits / this.pageSize);
-    if(totalProduits % this.pageSize !=0){
-      this.totalPage = this.totalPage+1;
+    this.appState.produitsState.totalProduits=totalProduits;
+    this.appState.produitsState.totalPage = Math.floor(totalProduits / this.appState.produitsState.pageSize);
+    if(totalProduits % this.appState.produitsState.pageSize !=0){
+      ++this.appState.produitsState.totalPage;
     }
   },
   error : err=>{
@@ -68,12 +68,14 @@ handleDelete(produit:Produit){
       subscribe({
 next:value=>{
   //this.getProduits(); //(cette methode supprime au niveau du back-end)
-  this.produits= this.produits.filter(p=>p.id!=produit.id) //cette methode supprime au niveau du front end 
+  //this.appState.produitsState.produits= this.appState.produitsState.produits.filter((p:any)
+  //=>p.id!=produit.id) //cette methode supprime au niveau du front end 
+  this.searchProduits();
 }
       })
 }
 handelGoToPage(page:number){
-  this.currentPage=page;
+  this.appState.produitsState.currentPage=page;
   this.searchProduits();
   }
   handleEdite(produit: Produit){
