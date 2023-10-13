@@ -18,4 +18,10 @@ export class AppStateService {
   }
 
   constructor() { }
+
+
+  public setProduitState(state:any):void{
+
+this.produitsState={...this.produitsState,...state}
+  }
 }

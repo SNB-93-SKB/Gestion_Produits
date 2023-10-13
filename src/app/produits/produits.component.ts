@@ -33,13 +33,19 @@ this.produitService.searchProduits(
   this.appState.produitsState.pageSize)
 .subscribe({
   next : (resp)=> {
-    this.appState.produitsState.produits = resp.body as Produit[];
+    let produits = resp.body as Produit[];
     let totalProduits:number=parseInt(resp.headers.get('x-total-count')!);
-    this.appState.produitsState.totalProduits=totalProduits;
-    this.appState.produitsState.totalPage = Math.floor(totalProduits / this.appState.produitsState.pageSize);
+    //this.appState.produitsState.totalProduits=totalProduits;
+    let totalPage =
+     Math.floor(totalProduits / this.appState.produitsState.pageSize);
     if(totalProduits % this.appState.produitsState.pageSize !=0){
-      ++this.appState.produitsState.totalPage;
+      ++totalPage;
     }
+    this.appState.setProduitState({
+produits:produits,
+totalPage:totalPage,
+totalProduits:totalProduits
+    })
   },
   error : err=>{
 console.log(err);
