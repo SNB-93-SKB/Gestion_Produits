@@ -25,7 +25,9 @@ export class ProduitsComponent implements OnInit{
     
   }
   searchProduits(){ 
-  
+  this.appState.setProduitState({
+    status:"LOADING"
+  });
 this.produitService.searchProduits(
   this.appState.produitsState.kw,
   //this.appState.produitsState.kw ,
@@ -44,11 +46,15 @@ this.produitService.searchProduits(
     this.appState.setProduitState({
 produits:produits,
 totalPage:totalPage,
-totalProduits:totalProduits
+totalProduits:totalProduits,
+status:"LOADED"
     })
   },
   error : err=>{
-console.log(err);
+this.appState.setProduitState({
+  status:"ERROR",
+  errorMessage:err,
+})
 
   }
 })

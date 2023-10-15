@@ -14,6 +14,9 @@ export class AppStateService {
  pageSize:4,
  currentPage:1,
  totalProduits:0,
+ status:"",
+ errorMessage:"",
+
  
   }
 

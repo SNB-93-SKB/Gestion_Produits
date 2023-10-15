@@ -14,6 +14,8 @@ import { RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { AdminTemplateComponent } from './admin-template/admin-template.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AppErrorsComponent } from './app-errors/app-errors.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     EditProduitComponent,
     LoginComponent,
     AdminTemplateComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    AppErrorsComponent
   ],
   imports: [
     BrowserModule,

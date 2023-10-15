@@ -5,7 +5,7 @@
       "nom": "PC_model1",
       "prix": "160000",
       "cheched": true,
-      "checked": true
+      "checked": false
     },
     {
       "nom": "Mariama Ba",
