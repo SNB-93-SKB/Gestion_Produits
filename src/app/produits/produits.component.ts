@@ -25,9 +25,11 @@ export class ProduitsComponent implements OnInit{
     
   }
   searchProduits(){ 
+    /*
   this.appState.setProduitState({
     status:"LOADING"
   });
+  */
 this.produitService.searchProduits(
   this.appState.produitsState.kw,
   //this.appState.produitsState.kw ,
@@ -47,7 +49,7 @@ this.produitService.searchProduits(
 produits:produits,
 totalPage:totalPage,
 totalProduits:totalProduits,
-status:"LOADED"
+//status:"LOADED"
     })
   },
   error : err=>{
@@ -57,7 +59,7 @@ this.appState.setProduitState({
 })
 
   }
-})
+}); 
 
 //this.produits=this.produitServices.getProduits();
 }

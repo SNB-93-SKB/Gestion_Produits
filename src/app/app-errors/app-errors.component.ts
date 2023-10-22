@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppStateService } from '../services/app-state.service';
 
 @Component({
   selector: 'app-app-errors',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppErrorsComponent {
 
+
+  constructor(public appState:AppStateService){
+
+  }
 }
