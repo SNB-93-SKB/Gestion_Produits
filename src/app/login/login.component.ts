@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,7 +11,7 @@ export class LoginComponent implements OnInit{
 
   formLogin!:FormGroup;
 
-  constructor(private fb:FormBuilder){
+  constructor(private fb:FormBuilder,private router:Router){
 
   }
   ngOnInit() {
@@ -21,6 +22,9 @@ export class LoginComponent implements OnInit{
   }
   handelLogin(){
 
-    console.log(this.formLogin.value);
+    console.log(this.formLogin.value); 
+     if(this.formLogin.value.username=="admin" && this.formLogin.value.password=="123"){
+this.router.navigateByUrl("/admin");
+     }
   }
 }

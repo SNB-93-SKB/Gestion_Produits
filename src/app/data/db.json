@@ -1,4 +1,8 @@
 {
+  "users":[
+    {"id":"user1", "password":"123", "roles":"USER","token":"JWT"},
+    {"id":"user2","password":"123","roles":"USER,ADMIN","token":"JWT"}
+  ],
   "produits": [
     {
       "id": 5,
