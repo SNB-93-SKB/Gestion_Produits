@@ -19,6 +19,12 @@ export class AppStateService {
 
  
   }
+  public authState:any={
+    isAuthenticated:false,
+    username:undefined,
+    roles:undefined,
+    token:undefined
+  }
 
   constructor() { }
 
@@ -26,5 +32,8 @@ export class AppStateService {
   public setProduitState(state:any):void{
 
 this.produitsState={...this.produitsState,...state}
+  }
+  public setAuthState(state:any):void{
+    this.authState={...this.authState,...state}
   }
 }

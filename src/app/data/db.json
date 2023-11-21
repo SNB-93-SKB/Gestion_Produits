@@ -1,7 +1,29 @@
 {
-  "users":[
-    {"id":"user1", "password":"123", "roles":"USER","token":"JWT"},
-    {"id":"user2","password":"123","roles":"USER,ADMIN","token":"JWT"}
+  "users": [
+    {
+      "id": "user1",
+      "password": "MTIz",
+      "roles": [
+        "USER"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMSIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwibm9tIjoiYmFsZGUiLCJwcmVub20iOiJzZW55IiwibWFpbCI6Im9zYnQyMDIxQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.ELTHKDNnbyP15Li7JcIBZqAiaPGKc79zDyKOUphCPkg "
+    },
+    {
+      "id": "user2",
+      "password": "MTIz",
+      "roles": [
+        "USER" ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyMiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwibm9tIjoiYmFsZGUiLCJwcmVub20iOiJzZW55IiwibWFpbCI6Im9zYnQyMDIxQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiXX0.W-vT8Ol1t-qAaHzsNxKrKfWxDQdoUHqgdnxicSqHnWE"
+    },
+    {
+      "id": "admin",
+      "password": "MTIz",
+      "roles": [
+        "USER",
+        "ADMIN"
+      ],
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTUxNjIzOTAyMiwiZXhwIjoxNTE2MjM5MDIyLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXV0aCIsIm5iZiI6MTUxNjIzOTAyMiwibm9tIjoiYmFsZGUiLCJwcmVub20iOiJzZW55IiwibWFpbCI6Im9zYnQyMDIxQGdtYWlsLmNvbSIsInJvbGVzIjpbIlVTRVIiLCJBRE1JTiJdfQ.HbL5N6qUVvUXMazEgnagLLl6NuSf_3oBctyzbfLuBlI"
+    }
   ],
   "produits": [
     {
@@ -41,13 +63,13 @@
       "id": 14
     },
     {
-      "nom": "casamançais",
+      "nom": "eaux casamançais",
       "prix": "400",
       "checked": true,
       "id": 15
     },
     {
-      "nom": "Séo",
+      "nom": "eaux Séo",
       "prix": "100",
       "checked": true,
       "id": 16
@@ -69,6 +91,13 @@
       "prix": "100",
       "checked": false,
       "id": 19
+    },
+    {
+      "id": 20,
+      "nom": "chargeur  pc",
+      "prix": "5000",
+      "cheched": false,
+      "checked": true
     }
   ]
 }
